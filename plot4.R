@@ -4,7 +4,7 @@ usedData <- file[file$Date %in% c("1/2/2007","2/2/2007"),]
 setTime <- strptime(paste(usedData$Date, usedData$Time, sep=" "),"%d/%m/%Y %H:%M:%S")
 finalFile <- cbind(setTime,usedData)
 
-png(file="plot4.png",bg="white")
+png(file="plot4.png",bg="white",width=480, height=480, units= "px")
 par(mfrow=c(2,2))
 plot(finalFile$setTime,finalFile$Global_active_power, type="l", col="black", xlab="", ylab="Global Active Power")
 plot(finalFile$setTime,finalFile$Voltage, type="l", col="black", xlab = "datetime",ylab="Voltage")
